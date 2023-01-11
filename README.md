@@ -63,7 +63,7 @@
                 HTTP/1.1 500 Internal Server Error
     - To search for a paragraph:
         - #### Request
-            ```http
+            ```python
             POST /search
             body: {
                 "words": "posit, tulip",
@@ -72,12 +72,12 @@
             ```
         - #### Responses
             - For Success case:
-                ```http
+                ```python
                 HTTP/1.1 200 OK
                 {"paragraphs": [{"paragraph":<text>},{"paragraph":<text>}...]} 
                 ```
             - For Failure case:
-                ```http
+                ```python
                 {'errors':[{'message': 'unsupported operator, supported operators are [OR, AND]'}]}, 422
                 HTTP/1.1 500 Internal Server Error
                 ```
@@ -88,7 +88,7 @@
             ```
         - #### Responses
             - For Success case:
-                ```http
+                ```python
                 HTTP/1.1 200 OK
                 {'meanings': {'word1': <meaning>, 'word2': <meaning>....}}
                 ```
