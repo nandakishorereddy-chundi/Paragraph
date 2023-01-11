@@ -1,0 +1,14 @@
+version : '3.3'
+services:
+  web:
+    build: .
+    command: python3 driver.py
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/Portcast
+    depends_on:
+      - db
+  db:
+    image: mongo:latest
+    container_name: mongo
